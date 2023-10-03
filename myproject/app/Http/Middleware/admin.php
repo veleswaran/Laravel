@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class admin
+class adming
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,11 @@ class admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth()->user()->usertype=='admin'){
+        if(Auth()->user()=='admin'){
             return $next($request);
         }
-        abort(401);
+        else{
+            return 401;
+        }
     }
 }
