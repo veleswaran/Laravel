@@ -20,6 +20,10 @@ class HomeController extends Controller
             }
         }
     }
+    public function select(){
+        $name=User::get();
+        return $name;
+    }
     public function post(){
         return view('post');
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\propertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
 
 Route::get('post',[HomeController::class,'post'])->middleware(['auth','admin']);
+Route::get('/upload',[propertyController::class,'index']);
+Route::post('/images',[propertyController::class,'upload']);
+Route::get('/show',[propertyController::class,'select']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
