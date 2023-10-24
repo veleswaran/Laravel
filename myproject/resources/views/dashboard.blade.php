@@ -15,4 +15,6 @@
         </div>
     </div>
 </x-app-layout>
-<div></div>
+<div>   
+    <button><a href="admin">make admin</a></button>
+</div>

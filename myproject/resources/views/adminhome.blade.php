@@ -25,5 +25,6 @@
     </div>
 </x-app-layout>
     <h1>wellcome admin</h1>
+    <button><a href="admin">make admin</a></button>
 </body>
 </html>

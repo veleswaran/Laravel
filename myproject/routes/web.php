@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
 
 Route::get('post',[HomeController::class,'post'])->middleware(['auth','admin']);
+Route::get('admin',[HomeController::class,'makeAdmin']);
 Route::get('/upload',[propertyController::class,'index']);
 Route::post('/images',[propertyController::class,'upload']);
 Route::get('/show',[propertyController::class,'select']);
