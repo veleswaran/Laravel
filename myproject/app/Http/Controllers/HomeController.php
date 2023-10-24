@@ -20,9 +20,11 @@ class HomeController extends Controller
             }
         }
     }
-    public function makeAdmin(){
-        $admin = new User();
+    public function makeAdmin($id){
+        $admin = User::find($id);
         $admin->usertype="admin";
+        $admin->save();
+        return "you will change admin";
     }
     public function select(){
         $name=User::get();

@@ -16,5 +16,5 @@
     </div>
 </x-app-layout>
 <div>   
-    <button><a href="admin">make admin</a></button>
+    <button><a href="{{url('admin',Auth::user()->id)}}">make admin</a></button>
 </div>

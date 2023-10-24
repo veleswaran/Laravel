@@ -27,10 +27,10 @@ Route::get('/', function () {
 Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
 
 Route::get('post',[HomeController::class,'post'])->middleware(['auth','admin']);
-Route::get('admin',[HomeController::class,'makeAdmin']);
+Route::get('admin/{id}',[HomeController::class,'makeAdmin'])->middleware(['auth','admin']);
 Route::get('/upload',[propertyController::class,'index']);
 Route::post('/images',[propertyController::class,'upload']);
-Route::get('/show',[propertyController::class,'select']);
+Route::get('/show',[propertyController::class,'select'])->middleware(['auth','vel']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
